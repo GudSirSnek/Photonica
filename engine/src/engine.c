@@ -8,29 +8,33 @@ uint32_t w_flags = 0;
 
 void pe_init(void){
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
-        SDL_Log("Failed to Initialize SDL: %s", SDL_GetError());
+        pe_printError("Failed to Initialize SDL: %s", SDL_GetError());
     }
     else if ((IMG_Init(imgFlags) & imgFlags) != imgFlags){
-        SDL_Log("Failed to Initialize SDL_img: %s", IMG_GetError());
+        pe_printFatalError("Failed to Initialize SDL_img: %s", IMG_GetError());
     }
+
+    pe_printInfo("successfully initialized Photonica Engine", NULL);
 }
 
 void pe_uninit(void){
-    printf("uniniting renderer, window, SDL\n");
+    pe_printNeutral("uniniting renderer, window, SDL", NULL);
     SDL_DestroyRenderer(renderer);
-    printf("renderer uninited\n");
+    pe_printNeutral("renderer uninitialized",NULL);
     SDL_DestroyWindow(window);
-    printf("window uninited\n");
+    pe_printNeutral("window uninitialized",NULL);
     IMG_Quit();
-    printf("SDL_IMG uninited\n");
+    pe_printNeutral("SDL_IMG uninitialized",NULL);
     SDL_Quit();
-    printf("SDL uninited\n");
+    pe_printNeutral("SDL uninitialized",NULL);
+
+    pe_printInfo("Photonica Engine successfully uninitialized",NULL);
 }
 
 void pe_createWindow(const char *title, int width, int height, uint32_t *flags){
     window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, *flags);
     if (!window){
-        fprintf(stderr, "ERROR INITIALIZING WINDOW.\n");
+        pe_printFatalError("ERROR INITIALIZING WINDOW.", SDL_GetError());
     }
 }
 
@@ -38,7 +42,7 @@ void pe_createWindow(const char *title, int width, int height, uint32_t *flags){
 void pe_createRenderer(void){
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer){
-        fprintf(stderr, "ERROR INITIALIZING RENDERER.\n");
+        pe_printFatalError("ERROR INITIALIZING RENDERER.", SDL_GetError());
     }
 }
 

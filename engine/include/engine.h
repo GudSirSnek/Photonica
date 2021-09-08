@@ -2,6 +2,8 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include "util.h"
+#include "maths.h"
 
 uint32_t w_flags;
 
