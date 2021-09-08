@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "SDL2",
+			"command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+			"args": [
+				"-g",
+				"src/*.c",
+				"engine/src/*.c",
+				"-o",
+				"build/game.exe",
+				"-IC:/Include/SDL2/include",
+				"-LC:/Include/SDL2/lib",
+				"-lmingw32",
+				"-lSDL2main",
+				"-lSDL2_image",
+				"-lSDL2"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
