@@ -3,8 +3,8 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "SDL2",
-			"command": "C:\\minGW\\mingw64\\bin\\gcc",
+			"label": "Photonica",
+			"command": "gcc",
 			"args": [
 				"-g",
 				"src/*.c",

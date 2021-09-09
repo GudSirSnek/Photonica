@@ -65,7 +65,7 @@ int main(int argc, char* args[]) {
     //game_is_running = initialize_window();
     game_is_running = 1;
     pe_init();
-    pe_createWindow("A window", WINDOW_WIDTH, WINDOW_HEIGHT, &w_flags);
+    pe_createWindow("A window", WINDOW_WIDTH, WINDOW_HEIGHT, 0);
     pe_createRenderer();
     setup();
     

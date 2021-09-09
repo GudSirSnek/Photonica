@@ -4,7 +4,7 @@ SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
 
 int imgFlags = IMG_INIT_PNG;
-uint32_t w_flags = 0;
+//uint32_t w_flags = 0;
 
 void pe_init(void){
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0){

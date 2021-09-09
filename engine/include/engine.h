@@ -5,7 +5,7 @@
 #include "util.h"
 #include "maths.h"
 
-uint32_t w_flags;
+//uint32_t w_flags  = 0;
 
 void pe_init(void);
 
