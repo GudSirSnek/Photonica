@@ -4,7 +4,7 @@
 		{
 			"type": "shell",
 			"label": "SDL2",
-			"command": "gcc",
+			"command": "C:\\minGW\\mingw64\\bin\\gcc",
 			"args": [
 				"-g",
 				"src/*.c",
