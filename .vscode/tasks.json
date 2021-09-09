@@ -4,13 +4,14 @@
 		{
 			"type": "shell",
 			"label": "SDL2",
-			"command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+			"command": "gcc",
 			"args": [
 				"-g",
 				"src/*.c",
 				"engine/src/*.c",
 				"-o",
 				"build/game.exe",
+				"-Iengine/include",
 				"-IC:/Include/SDL2/include",
 				"-LC:/Include/SDL2/lib",
 				"-lmingw32",
