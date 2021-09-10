@@ -5,11 +5,11 @@
 #include "util.h"
 #include "maths.h"
 
-//uint32_t w_flags  = 0;
+
 
 void pe_init(void);
 
-void pe_createWindow(const char *name, int width, int height, uint32_t *flags);
+void pe_createWindow(const char *name, int width, int height);
 
 void pe_createRenderer(void);
 

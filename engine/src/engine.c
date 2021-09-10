@@ -1,10 +1,10 @@
-#include "../include/engine.h"
+#include <engine.h>
 #include <stdio.h>
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
 
 int imgFlags = IMG_INIT_PNG;
-//uint32_t w_flags = 0;
+uint32_t w_flags = 0;
 
 void pe_init(void){
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
@@ -31,8 +31,8 @@ void pe_uninit(void){
     pe_printInfo("Photonica Engine successfully uninitialized",NULL);
 }
 
-void pe_createWindow(const char *title, int width, int height, uint32_t *flags){
-    window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, *flags);
+void pe_createWindow(const char *title, int width, int height){
+    window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, w_flags);
     if (!window){
         pe_printFatalError("ERROR INITIALIZING WINDOW.", SDL_GetError());
     }

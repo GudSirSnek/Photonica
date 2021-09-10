@@ -1,4 +1,4 @@
-#include "../include/util.h"
+#include <util.h>
 #include <time.h>
 
 void pe_printTime(){
