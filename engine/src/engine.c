@@ -1,4 +1,4 @@
-#include "../include/engine.h"
+#include <engine.h>
 #include <stdio.h>
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
@@ -31,8 +31,8 @@ void pe_uninit(void){
     pe_printInfo("Photonica Engine successfully uninitialized",NULL);
 }
 
-void pe_createWindow(const char *title, int width, int height, uint32_t *flags){
-    window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, *flags);
+void pe_createWindow(const char *title, int width, int height){
+    window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, w_flags);
     if (!window){
         pe_printFatalError("ERROR INITIALIZING WINDOW.", SDL_GetError());
     }
@@ -92,6 +92,12 @@ void pe_drawCircle(int centerX, int centerY, int radius){
 	     error += (tx - diameter);
 	  }
     }
+}
+
+void pe_drawRect(SDL_Rect* rect, int r, int g, int b, int a){
+    SDL_SetRenderDrawColor(renderer, r, g ,b, a);
+    SDL_RenderDrawRect(renderer, rect);
+
 }
 
 void pe_getInput(void){
