@@ -94,6 +94,12 @@ void pe_drawCircle(int centerX, int centerY, int radius){
     }
 }
 
+void pe_drawRect(SDL_Rect* rect, int r, int g, int b, int a){
+    SDL_SetRenderDrawColor(renderer, r, g ,b, a);
+    SDL_RenderDrawRect(renderer, rect);
+
+}
+
 void pe_getInput(void){
 
 }

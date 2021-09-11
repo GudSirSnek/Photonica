@@ -77,7 +77,8 @@ int main(int argc, char* args[]) {
         
 
         pe_startRender();
-        
+        SDL_Rect rect = {400, 300, 100, 100};
+        pe_drawRect(&rect, 255, 255, 255, 255);
         pe_drawCircle(400, 300, 100);
         //render stuff here
         pe_endRender();
