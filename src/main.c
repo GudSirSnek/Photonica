@@ -1,8 +1,8 @@
 #include <engine.h>
 #include <stdio.h>
 
-#define WINDOW_WIDTH 800
-#define WINDOW_HEIGHT 600
+#define WINDOW_WIDTH 960
+#define WINDOW_HEIGHT 540
 
 #define FALSE 0
 #define TRUE 1

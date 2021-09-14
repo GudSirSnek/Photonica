@@ -4,7 +4,7 @@
 #include <SDL2/SDL_image.h>
 #include "util.h"
 #include "maths.h"
-
+#include "physics.h"
 
 
 void pe_init(void);

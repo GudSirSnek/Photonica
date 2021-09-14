@@ -40,7 +40,7 @@ void pe_createWindow(const char *title, int width, int height){
 
 
 void pe_createRenderer(void){
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED||SDL_HINT_RENDER_VSYNC);
     if (!renderer){
         pe_printFatalError("ERROR INITIALIZING RENDERER.", SDL_GetError());
     }
